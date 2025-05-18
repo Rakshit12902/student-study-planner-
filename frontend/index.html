@@ -216,13 +216,23 @@
         // React components would go here
         // For example:
         function App() {
-            return (
-                <div>
-                    {/* The HTML structure above would be converted to React components */}
-                </div>
-            );
-        }
-        
+          return (
+                <Router>
+                      <Routes>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/SideBar" element={<SideBar/>}
+                            <Route path="/DashboardHeader" element={<DashboardHeader />}
+                            <Route path="/StatsCards" element={<StatsCards />}
+                            <Route path="/TodaysSchedule" element={<TodaysSchedule />}
+                            <Route path="/WeeklyOverview" element={<WeeklyOverview />}
+                            <Route path="/ProgressChart" element={<ProgressChart />}
+                            <Route path="/UpcomingExams" element={<UpcomingExams />}
+                                        
+                            
+                      </Routes>
+                </Router>
+                      );
+                }
         ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
