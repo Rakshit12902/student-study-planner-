@@ -1,2 +1,17 @@
+<<<<<<< HEAD
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  directory = "../server/.netlify/functions"
+=======
 cd client
 npm run build
+
+>>>>>>> a87378f47ac3ca52f51d4a2c04239fe0ccdf12ca
