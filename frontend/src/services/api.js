@@ -1,12 +1,19 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+import axios from 'axios';
 
-export const checkBackendStatus = async () => {
-    try {
-        const response = await fetch(`${API_URL}/`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error checking backend status:', error);
-        throw error;
-    }
-}; 
+const api = axios.create({
+  baseURL: 'http://localhost:5000/api',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+// Add interceptors for JWT tokens
+api.interceptors.request.use(config => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default api;

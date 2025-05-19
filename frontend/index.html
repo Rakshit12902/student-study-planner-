@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body class="bg-gray-50">
     <div id="root">
         <!-- React will mount here -->
@@ -17,7 +19,7 @@
                     <i class="fas fa-book-open text-2xl"></i>
                     <h1 class="text-xl font-bold">Study Planner</h1>
                 </div>
-                
+
                 <nav>
                     <ul class="space-y-2">
                         <li>
@@ -53,7 +55,7 @@
                     </ul>
                 </nav>
             </div>
-            
+
             <!-- Main Content -->
             <div class="flex-1 p-8 overflow-auto">
                 <header class="flex justify-between items-center mb-8">
@@ -61,7 +63,8 @@
                     <div class="flex items-center space-x-4">
                         <div class="relative">
                             <i class="fas fa-bell text-gray-500 text-xl"></i>
-                            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                            <span
+                                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <img src="https://via.placeholder.com/40" alt="User" class="rounded-full">
@@ -69,7 +72,7 @@
                         </div>
                     </div>
                 </header>
-                
+
                 <!-- Stats Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white p-6 rounded-lg shadow">
@@ -81,7 +84,7 @@
                             <i class="fas fa-calendar-check text-indigo-500 text-3xl"></i>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white p-6 rounded-lg shadow">
                         <div class="flex justify-between">
                             <div>
@@ -91,7 +94,7 @@
                             <i class="fas fa-clock text-indigo-500 text-3xl"></i>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white p-6 rounded-lg shadow">
                         <div class="flex justify-between">
                             <div>
@@ -102,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Today's Schedule -->
                 <div class="bg-white rounded-lg shadow mb-8">
                     <div class="p-4 border-b">
@@ -124,7 +127,7 @@
                                     <p class="text-sm text-gray-500">9:00 AM - 11:00 AM</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start p-3 border rounded-lg">
                                 <div class="bg-blue-100 p-2 rounded mr-4">
                                     <i class="fas fa-flask text-blue-600"></i>
@@ -138,7 +141,7 @@
                                     <p class="text-sm text-gray-500">2:00 PM - 3:30 PM</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start p-3 border rounded-lg">
                                 <div class="bg-green-100 p-2 rounded mr-4">
                                     <i class="fas fa-globe-americas text-green-600"></i>
@@ -155,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Weekly Overview -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="bg-white rounded-lg shadow p-6">
@@ -167,7 +170,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white rounded-lg shadow p-6">
                         <h3 class="font-bold text-lg mb-4">Upcoming Exams</h3>
                         <div class="space-y-4">
@@ -180,7 +183,7 @@
                                     <p class="text-sm text-gray-500">June 15 (10 days left)</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center p-3 border rounded-lg">
                                 <div class="bg-yellow-100 p-3 rounded-full mr-4">
                                     <i class="fas fa-exclamation text-yellow-500"></i>
@@ -190,7 +193,7 @@
                                     <p class="text-sm text-gray-500">June 22 (17 days left)</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center p-3 border rounded-lg">
                                 <div class="bg-green-100 p-3 rounded-full mr-4">
                                     <i class="fas fa-exclamation text-green-500"></i>
@@ -206,34 +209,35 @@
             </div>
         </div>
     </div>
-    
+
     <!-- React and other scripts -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+
     <script type="text/babel">
         // React components would go here
         // For example:
         function App() {
-          return (
+            return (
                 <Router>
-                      <Routes>
-                            <Route path="/dashboard" element={<Dashboard />} />
-                            <Route path="/SideBar" element={<SideBar/>}
-                            <Route path="/DashboardHeader" element={<DashboardHeader />}
-                            <Route path="/StatsCards" element={<StatsCards />}
-                            <Route path="/TodaysSchedule" element={<TodaysSchedule />}
-                            <Route path="/WeeklyOverview" element={<WeeklyOverview />}
-                            <Route path="/ProgressChart" element={<ProgressChart />}
-                            <Route path="/UpcomingExams" element={<UpcomingExams />}
-                                        
-                            
-                      </Routes>
+                    <Routes>
+                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/SideBar" element={<SideBar />} />
+                        <Route path="/DashboardHeader" element={<DashboardHeader />} />
+                        <Route path="/StatsCards" element={<StatsCards />} />
+                        <Route path="/TodaysSchedule" element={<TodaysSchedule />} />
+                        <Route path="/WeeklyOverview" element={<WeeklyOverview />} />
+                        <Route path="/ProgressChart" element={<ProgressChart />} />
+                        <Route path="/UpcomingExams" element={<UpcomingExams />} />
+
+
+                    </Routes>
                 </Router>
-                      );
-                }
+            );
+        }
         ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
+
 </html>

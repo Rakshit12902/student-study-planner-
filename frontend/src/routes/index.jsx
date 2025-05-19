@@ -1,21 +1,16 @@
-import { createBrowserRouter } from 'react-router-dom';
-import Home from '../pages/Home';
-import NotFound from '../pages/NotFound';
-import Layout from '../components/Layout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Subjects from './pages/Subjects';
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: '*',
-        element: <NotFound />,
-      },
-    ],
-  },
-]); 
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/subjects" element={<Subjects />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
